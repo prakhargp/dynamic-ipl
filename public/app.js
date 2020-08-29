@@ -1,22 +1,21 @@
-function start() {
-  document
-    .querySelector(".year-button")
-    .addEventListener("click", fetchAndRenderEconomyRatesForYear);
-}
-function fetchAndRenderEconomyRatesForYear(e) {
-  var t = document.querySelector(".year-input").value;
-  (t = parseInt(t)) < 2008 || 2019 < t
-    ? (document.querySelector(".input-container > .error").classList.value =
-        "error")
-    : ((document.querySelector(".input-container > .error").classList =
-        "error invisible"),
-      console.log(t),
+function currentYear() {
+  let a = document.querySelector(".year-button");
+
+  a.addEventListener("click", function economicalBowlersForCurrentYear() {
+    var year = document.querySelector(".year-input").value;
+
+    if (year < 2008 || year > 2019) {
+      document.querySelector(".input-container > .error").classList.value ="error invisible";
+    } else {
+      document.querySelector(".input-container > .error").classList = "error invisible";
       fetch("./data.json")
-        .then((e) => e.json())
-        .then(function (e) {
+        .then((r) => r.json())
+        .then(function (r) {
           (document.querySelector("#eeconomical-bowlers").innerHTML = ""),
-            visualizeEeconomicalBowlers(t, e.economicalBowlers);
-        }));
+            visualizeEeconomicalBowlers(year, r.economicalBowlers);
+        });
+    }
+  });
 }
 
 function fetchAndVisualizeData() {
@@ -34,7 +33,7 @@ function visualizeData(data) {
   return;
 }
 fetchAndVisualizeData();
-start();
+currentYear();
 
 function visualizeMatchesPlayedPerYear(matchesPlayedPerYear) {
   const seriesData = [];
