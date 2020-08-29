@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<style>
+body {
+    font-family: sans-serif;
+}
+
+.chart-container {
+    border: 1px dashed cornflowerblue;
+    margin: 50px;
+    margin-bottom: 0px;
+    padding: 50px;
+}
+
+.input-container,
+h1 {
+    margin: 3rem;
+}
+
+.loading {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.input-container .label {
+    font-size: 20px;
+}
+
+.input-container .error {
+    color: red;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+
+input {
+    font-size: 20px;;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.year-button {
+    
+    font-size: 20px;
+    color: #FFFFFF;
+    background: #111111;
+    cursor: pointer;
+}
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="IPL visualization">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>
+        IPL visualization
+    </title>
+</head>
+
+<body>
+    <h1>IPL Dataset visualization</h1>
+    <div class="input-container">
+        <span class="label">Enter year: </span>
+        <input type="number" min="2008" max="2019" class="year-input" />
+        <button class="year-button">Submit</button>
+        <span class="error invisible">Error: Enter year from 2008 to 2019</span>
+    </div>
+    <div id="eeconomical-bowlers" class="chart-container" style="min-width: 310px; height: 500px;"></div>
+    <br>
+    <div id="matches-played-per-year" class="chart-container" style="min-width: 310px; height: 500px;"></div>
+    <br>
+    <div id="matches-won-by-each-team" class="chart-container" style="min-width: 310px; height: 500px;"></div>
+    <br>
+    <div id="extra-runs-by-each-team" class="chart-container" style="min-width: 310px; height: 500px;"></div>
+    <br>
+    <div id="economical-bowlers" class="chart-container" style="min-width: 310px; height: 500px;"></div>
+    <br>
+    <div id="matches-per-venue" class="chart-container" style="min-width: 310px; height: 1000px;"></div>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <script src="./app.js"></script>
+
+</body>
