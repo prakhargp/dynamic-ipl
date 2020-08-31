@@ -1,22 +1,16 @@
 function currentYear() {
-  let a = document.querySelector(".year-button");
+  let a = document.querySelector(".button");
 
   a.addEventListener("click", function economicalBowlersForCurrentYear() {
-    var year = document.querySelector(".year-input").value;
-
-    if (year < 2008 || year > 2019) {
-      document.querySelector(".input-container > .error").classList.value ="error invisible";
-    } else {
-      document.querySelector(".input-container > .error").classList = "error invisible";
+    var year = document.querySelector(".input").value;
       fetch("./data.json")
         .then((r) => r.json())
         .then(function (r) {
           (document.querySelector("#eeconomical-bowlers").innerHTML = ""),
             visualizeEeconomicalBowlers(year, r.economicalBowlers);
         });
-    }
-  });
-}
+    })
+  }
 
 function fetchAndVisualizeData() {
   fetch("./data.json")

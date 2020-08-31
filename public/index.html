@@ -1,47 +1,36 @@
 <!doctype html>
 <html lang="en">
 <style>
-body {
-    font-family: sans-serif;
-}
 
-.chart-container {
+.stats {
     border: 1px dashed cornflowerblue;
     margin: 50px;
     margin-bottom: 0px;
     padding: 50px;
 }
 
-.input-container,
 h1 {
     margin: 3rem;
 }
 
-.loading {
-    text-align: center;
-    font-size: 2rem;
-}
 
-.input-container .label {
+.label{
     font-size: 20px;
 }
 
-.input-container .error {
-    color: red;
+.divv{
+    color: black;
+    font-size: 20px;
+    margin: 3rem;
 }
 
-.invisible {
-    visibility: hidden;
-}
-
-
-input {
+.input {
     font-size: 20px;;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-.year-button {
+.button {
     
     font-size: 20px;
     color: #FFFFFF;
@@ -62,23 +51,23 @@ input {
 
 <body>
     <h1>IPL Dataset visualization</h1>
-    <div class="input-container">
+    <div class="divv">
         <span class="label">Enter year: </span>
-        <input type="number" min="2008" max="2019" class="year-input" />
-        <button class="year-button">Submit</button>
-        <span class="error invisible">Error: Enter year from 2008 to 2019</span>
+        <input type="number" min="2008" max="2019" class="input" />
+        <button class="button">Submit</button>
+        <span class="warning"> * year from 2008 to 2019</span>
     </div>
-    <div id="eeconomical-bowlers" class="chart-container" style="min-width: 310px; height: 500px;"></div>
+    <div id="eeconomical-bowlers" class="stats" style="min-width: 310px; height: 500px;"></div>
     <br>
-    <div id="matches-played-per-year" class="chart-container" style="min-width: 310px; height: 500px;"></div>
+    <div id="matches-played-per-year" class="stats" style="min-width: 310px; height: 500px;"></div>
     <br>
-    <div id="matches-won-by-each-team" class="chart-container" style="min-width: 310px; height: 500px;"></div>
+    <div id="matches-won-by-each-team" class="stats" style="min-width: 310px; height: 500px;"></div>
     <br>
-    <div id="extra-runs-by-each-team" class="chart-container" style="min-width: 310px; height: 500px;"></div>
+    <div id="extra-runs-by-each-team" class="stats" style="min-width: 310px; height: 500px;"></div>
     <br>
-    <div id="economical-bowlers" class="chart-container" style="min-width: 310px; height: 500px;"></div>
+    <div id="economical-bowlers" class="stats" style="min-width: 310px; height: 500px;"></div>
     <br>
-    <div id="matches-per-venue" class="chart-container" style="min-width: 310px; height: 1000px;"></div>
+    <div id="matches-per-venue" class="stats" style="min-width: 310px; height: 1000px;"></div>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
